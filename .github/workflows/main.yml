@@ -1,0 +1,17 @@
+name: buildAndDeploy
+on:
+  push
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest # 我们选择使用最新的ubuntu系统
+    steps:
+    - name: checkout
+      uses: actions/checkout@v3 # 将代码拷贝到虚机中
+      
+    - name: install and build
+      run: |
+          npm install
+          node shot.js 
+      
+    - name: buildAndDeploy
+      uses: JamesIves/github-pages-deploy-action@v4 t
