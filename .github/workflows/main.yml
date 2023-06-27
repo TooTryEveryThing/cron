@@ -14,4 +14,4 @@ jobs:
           node shot.js 
       
     - name: buildAndDeploy
-      uses: JamesIves/github-pages-deploy-action@v4 t
+      uses: JamesIves/github-pages-deploy-action@v4
