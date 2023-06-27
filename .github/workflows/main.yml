@@ -24,3 +24,7 @@ jobs:
           npm i puppeteer
           node node_modules/puppeteer/install.js        
           node ./shot.js  # 要运行的js脚本，放在根目录下
+      - name: image
+        uses: JamesIves/github-pages-deploy-action@v4 
+        with:
+           BRANCH: image # 存放产物的分支名称
