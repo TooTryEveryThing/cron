@@ -27,5 +27,5 @@ jobs:
 
       - name: Create Image Branch
         run: |
-          mkdir images
-          mv *.png images/
+          mkdir -p ${{ github.workspace }}/images
+          mv *.png ${{ github.workspace }}/images/
