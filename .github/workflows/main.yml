@@ -29,7 +29,8 @@ jobs:
 
       - name: Create Image Branch
         run: |
-          git checkout -B image origin/image
+          git fetch origin
+          git checkout image
           mkdir -p image
           mv *.png image/
           git pull origin image
