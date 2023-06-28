@@ -32,6 +32,7 @@ jobs:
           git checkout -b image
           mkdir -p image
           mv *.png image/
+          git pull origin image
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add .
