@@ -9,8 +9,11 @@ async function captureScreenshot() {
   
   await page.goto('http://zovs.cn/'); // 替换成你的网站地址
   
-  // 获取当前日期
+ // 获取当前日期和时间
   const currentDate = new Date();
+  const timezoneOffset = currentDate.getTimezoneOffset(); // 获取时区偏移量，单位为分钟
+  const localDate = new Date(currentDate.getTime() - (timezoneOffset * 60000) + (8 * 3600000)); // 修正时区偏移量为 UTC+8
+  
   // const formattedDate = currentDate.toISOString().slice(0, 10); // 格式化日期为 yyyy-MM-dd
   const year = currentDate.getFullYear();
   const month = String(currentDate.getMonth() + 1).padStart(2, '0');
