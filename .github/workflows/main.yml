@@ -21,6 +21,7 @@ jobs:
           
       - name: Install Dependencies
         run: |
+          sudo apt-get install fonts-wqy-zenhei
           npm install
           npm install puppeteer
           
