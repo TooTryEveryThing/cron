@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: '0 */6 * * *'  # 每6小时执行一次，可根据需要调整时间
+    - cron: '1 * * * *'  # 每6小时执行一次，可根据需要调整时间
 
 jobs:
   run-coupons:
