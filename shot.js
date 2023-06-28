@@ -5,9 +5,21 @@ async function captureScreenshot() {
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
 
+  await page.setExtraHTTPHeaders({
+    'Accept-Language': 'zh-CN,zh;q=0.9', // 设置页面的语言为中文
+  });
+  await page.evaluateOnNewDocument(() => {
+    // 修改页面默认字体为中文字体
+    const font = new FontFace('SimSun', 'url(https://fonts.gstatic.com/s/notosanssc/v12/NotoSansSC-Regular.otf)');
+    document.fonts.add(font);
+    document.body.style.fontFamily = 'SimSun';
+  });
+
   await page.setViewport({ width: 1920, height: 1080 }); // 根据需要设置宽度和高度
   
   await page.goto('http://zovs.cn/'); // 替换成你的网站地址
+
+  await new Promise(resolve => setTimeout(resolve, 3000));  //  延迟3s
   
  // 获取当前日期和时间
   const currentDate = new Date();
