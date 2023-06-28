@@ -15,12 +15,12 @@ async function captureScreenshot() {
   const localDate = new Date(currentDate.getTime() - (timezoneOffset * 60000) + (8 * 3600000)); // 修正时区偏移量为 UTC+8
   
   // const formattedDate = currentDate.toISOString().slice(0, 10); // 格式化日期为 yyyy-MM-dd
-  const year = currentDate.getFullYear();
-  const month = String(currentDate.getMonth() + 1).padStart(2, '0');
-  const day = String(currentDate.getDate()).padStart(2, '0');
-  const hours = String(currentDate.getHours()).padStart(2, '0');
-  const minutes = String(currentDate.getMinutes()).padStart(2, '0');
-  const seconds = String(currentDate.getSeconds()).padStart(2, '0');
+  const year = localDate.getFullYear();
+  const month = String(localDate.getMonth() + 1).padStart(2, '0');
+  const day = String(localDate.getDate()).padStart(2, '0');
+  const hours = String(localDate.getHours()).padStart(2, '0');
+  const minutes = String(localDate.getMinutes()).padStart(2, '0');
+  const seconds = String(localDate.getSeconds()).padStart(2, '0');
   
   // 生成截图文件路径和名称
   // const screenshotPath = path.join(__dirname, `${formattedDate}.png`);
