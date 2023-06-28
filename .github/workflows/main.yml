@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: '1 * * * *'  # 每6小时执行一次，可根据需要调整时间
+    - cron: '0 */6 * * *'  # 每6小时执行一次，可根据需要调整时间
 
 jobs:
   run-coupons:
@@ -30,9 +30,10 @@ jobs:
       - name: Create Image Branch
         run: |
           git checkout -b image
+          mkdir -p image
+          mv *.png image/
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git pull
           git add .
           git commit -m "Add downloaded images"
           git push origin image
