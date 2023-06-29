@@ -36,8 +36,8 @@ jobs:
           mkdir -p image
           mv *.png image/
           git pull origin image
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
+          git config --local user.email "1415673477@qq.com"
+          git config --local user.name "igaged"
           git add .
           git commit -m "Add downloaded images"
           git push origin image
