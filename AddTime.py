@@ -1,3 +1,5 @@
+#  快速将图片的名字加入到图片中
+# caatgpt的回答 https://chat.openai.com/share/026a2853-8540-4d4e-9b8d-0b50fde5eaac
 # pip install pillow
 from PIL import Image, ImageDraw, ImageFont
 import os
